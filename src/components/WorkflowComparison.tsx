@@ -1,6 +1,5 @@
-
 import { motion } from "framer-motion";
-import { Clock, Check, X } from "lucide-react";
+import { Clock, Check, X, Upload, Brain, Users, FileEdit, Download } from "lucide-react";
 
 const WorkflowComparison = () => {
   return (
@@ -102,7 +101,7 @@ const WorkflowComparison = () => {
         <div className="space-y-5">
           <div className="flex items-start">
             <div className="bg-primary/10 flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full mr-4 mt-1">
-              <span className="font-semibold text-primary">1</span>
+              <Upload className="h-4 w-4 text-primary" />
             </div>
             <div>
               <p className="font-medium text-gray-800">Upload spec to Specifier platform</p>
@@ -112,7 +111,7 @@ const WorkflowComparison = () => {
           
           <div className="flex items-start">
             <div className="bg-primary/10 flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full mr-4 mt-1">
-              <span className="font-semibold text-primary">2</span>
+              <Brain className="h-4 w-4 text-primary" />
             </div>
             <div>
               <p className="font-medium text-gray-800">AI instantly analyzes requirements</p>
@@ -122,7 +121,7 @@ const WorkflowComparison = () => {
           
           <div className="flex items-start">
             <div className="bg-primary/10 flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full mr-4 mt-1">
-              <span className="font-semibold text-primary">3</span>
+              <Users className="h-4 w-4 text-primary" />
             </div>
             <div>
               <p className="font-medium text-gray-800">Direct collaboration with ABB</p>
@@ -132,7 +131,7 @@ const WorkflowComparison = () => {
           
           <div className="flex items-start">
             <div className="bg-primary/10 flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full mr-4 mt-1">
-              <span className="font-semibold text-primary">4</span>
+              <FileEdit className="h-4 w-4 text-primary" />
             </div>
             <div>
               <p className="font-medium text-gray-800">Co-create final specification</p>
@@ -142,7 +141,7 @@ const WorkflowComparison = () => {
           
           <div className="flex items-start">
             <div className="bg-primary/10 flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full mr-4 mt-1">
-              <span className="font-semibold text-primary">5</span>
+              <Download className="h-4 w-4 text-primary" />
             </div>
             <div>
               <p className="font-medium text-gray-800">Export complete documentation</p>
