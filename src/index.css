@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -73,20 +73,52 @@
   * {
     @apply border-border;
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply bg-background text-foreground font-inter;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5 {
+    @apply font-poppins font-semibold;
   }
 }
 
 @layer utilities {
   .shadow-card {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
   }
+  
   .text-gradient {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(90deg, hsl(var(--primary)), #FF719A);
+  }
+  
+  .bg-glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20;
+  }
+  
+  .section-divider {
+    position: relative;
+    height: 80px;
+    margin-top: -40px;
+    z-index: 10;
+  }
+  
+  .section-divider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    clip-path: ellipse(50% 60% at 50% 0%);
   }
 }
