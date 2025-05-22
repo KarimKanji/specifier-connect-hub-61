@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { BarChart2, LineChart, PieChart, AreaChart } from "lucide-react";
 
 interface DashboardPreviewProps {
   title: string;
@@ -11,6 +12,20 @@ interface DashboardPreviewProps {
 }
 
 const DashboardPreview = ({ title, description, imageSrc, className = "", delay = 0 }: DashboardPreviewProps) => {
+  // Function to get an appropriate icon based on the dashboard title
+  const getIconForDashboard = (title: string) => {
+    const titleLower = title.toLowerCase();
+    if (titleLower.includes("analysis") || titleLower.includes("data")) {
+      return <BarChart2 className="h-12 w-12 text-primary/50" />;
+    } else if (titleLower.includes("report") || titleLower.includes("metric")) {
+      return <LineChart className="h-12 w-12 text-primary/50" />;
+    } else if (titleLower.includes("distribution") || titleLower.includes("breakdown")) {
+      return <PieChart className="h-12 w-12 text-primary/50" />;
+    } else {
+      return <AreaChart className="h-12 w-12 text-primary/50" />;
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -32,7 +47,9 @@ const DashboardPreview = ({ title, description, imageSrc, className = "", delay 
                 className="max-w-full h-auto rounded shadow-sm" 
               />
             ) : (
-              <div className="w-full h-full min-h-[120px] rounded-md bg-gradient-to-r from-gray-200 to-gray-100 animate-pulse"></div>
+              <div className="w-full h-full min-h-[120px] rounded-md bg-gradient-to-r from-gray-200 to-gray-100 animate-pulse flex items-center justify-center">
+                {getIconForDashboard(title)}
+              </div>
             )}
           </div>
         </CardContent>
