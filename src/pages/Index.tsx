@@ -5,7 +5,10 @@ import FeatureCard from "@/components/FeatureCard";
 import SpecList from "@/components/SpecList";
 import DashboardPreview from "@/components/DashboardPreview";
 import SpecTable from "@/components/SpecTable";
-import { ArrowRight, FileText, MessageSquare, Search } from "lucide-react";
+import { ArrowRight, FileText, MessageSquare, Search, Check, Clock } from "lucide-react";
+import WorkflowComparison from "@/components/WorkflowComparison";
+import Testimonial from "@/components/Testimonial";
+import BenefitsMetric from "@/components/BenefitsMetric";
 
 const Index = () => {
   return (
@@ -17,18 +20,18 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              WELCOME TO <span className="text-gradient">SPECIFIER</span>
+              ACCELERATE MOTOR <span className="text-gradient">SPECIFICATIONS</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8">
-              Leverage AI-powered insights to analyze specifications faster, communicate better, and build stronger relationships between Technical Distributors and ABB.
+              Streamline collaboration between Technical Distributors and ABB with AI-powered spec analysis and real-time co-creation, eliminating lengthy emails and spreadsheets.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Get Started
+                Start Collaborating
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button size="lg" variant="outline">
-                Request Demo
+                See How It Works
               </Button>
             </div>
           </div>
@@ -43,12 +46,12 @@ const Index = () => {
               title="Active Specifications"
               className="animate-fade-in"
               rows={[
-                { title: "Power Distribution Panel", description: "ABB-PDP-2023-01", status: "Updated" },
-                { title: "Circuit Breaker Specifications", description: "CB-SPEC-V3", status: "New" },
-                { title: "Automation Control Systems", description: "ACS-2023-Q2", status: "Updated" },
-                { title: "Voltage Regulators Type A", description: "VR-2023-TYPE-A", status: "Review" },
-                { title: "Industrial IoT Sensors", description: "IOT-SENSOR-2023", status: "Approved" },
-                { title: "Smart Building Integration", description: "SBI-PROTO-2023", status: "New" },
+                { title: "Industrial Motor Type-A Specs", description: "For Chemical Processing Plant", status: "Updated" },
+                { title: "High-Efficiency Motor Requirements", description: "Commercial Building Project", status: "New" },
+                { title: "Custom Motor Control Systems", description: "Manufacturing Line Upgrade", status: "Updated" },
+                { title: "Explosion-Proof Motor Specs", description: "Oil & Gas Application", status: "Review" },
+                { title: "Variable Frequency Drive Integration", description: "Water Treatment Facility", status: "Approved" },
+                { title: "Energy-Efficient Motor Upgrade", description: "Sustainable Factory Initiative", status: "New" },
               ]}
             />
           </div>
@@ -59,27 +62,30 @@ const Index = () => {
       <section id="features" className="py-20">
         <div className="container mx-auto px-4 md:px-0">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Why use Specifier</h2>
+            <h2 className="text-3xl font-bold mb-4">Transforming Motor Specification</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Advanced tools to streamline specification reading and enhance communication between Technical Distributors and manufacturing partners.
+              Replace lengthy emails and complex spreadsheets with a streamlined platform designed specifically for technical distributors and ABB engineers.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FeatureCard 
-              title="Fast AI Reading" 
-              description="Process technical specifications in seconds, not hours. Our AI extracts key requirements and highlights critical points."
+              title="AI-Powered Spec Analysis" 
+              description="Upload specifications from end clients and get instant AI summaries, highlighting critical requirements and potential challenges."
               icon={<Search className="h-6 w-6" />}
+              delay={0.1}
             />
             <FeatureCard 
-              title="Smart Documentation" 
-              description="Organize all specifications in one place with intelligent tagging, versioning, and change tracking."
-              icon={<FileText className="h-6 w-6" />}
-            />
-            <FeatureCard 
-              title="Direct Communication" 
-              description="Connect directly with ABB engineers and product managers for clarifications and technical support."
+              title="Real-Time Collaboration" 
+              description="Collaborate directly with ABB engineers on the platform, eliminating the need for lengthy email chains and Excel spreadsheets."
               icon={<MessageSquare className="h-6 w-6" />}
+              delay={0.2}
+            />
+            <FeatureCard 
+              title="Centralized Documentation" 
+              description="Keep all specifications, communications, and revisions in one place with automatic version tracking and change history."
+              icon={<FileText className="h-6 w-6" />}
+              delay={0.3}
             />
           </div>
         </div>
@@ -89,78 +95,122 @@ const Index = () => {
       <section id="how-it-works" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 md:px-0">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">How It Works</h2>
+            <h2 className="text-3xl font-bold mb-4">The Specifier Workflow</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Specifier streamlines the technical specification workflow with an intuitive process designed for professionals.
+              Five simple steps to faster, more accurate motor specifications for your clients.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-6xl mx-auto">
             <DashboardPreview 
-              title="1. Upload and Analyze" 
-              description="Upload specifications and let our AI analyze requirements"
+              title="1. Upload Specs" 
+              description="Upload end client specifications to the platform"
             />
             <DashboardPreview 
-              title="2. Review and Annotate" 
-              description="Review AI insights and add your own annotations"
+              title="2. AI Analysis" 
+              description="Get instant AI summaries and highlights of key requirements"
             />
             <DashboardPreview 
-              title="3. Collaborate and Resolve" 
-              description="Collaborate with ABB on questions and clarifications"
+              title="3. ABB Collaboration" 
+              description="Connect with ABB engineers for expert input when needed"
+            />
+            <DashboardPreview 
+              title="4. Co-Create Solution" 
+              description="Finalize motor specifications in real-time together"
+            />
+            <DashboardPreview 
+              title="5. Faster Delivery" 
+              description="Deliver the completed product to your end client"
             />
           </div>
         </div>
       </section>
 
-      {/* Communication Platform */}
-      <section id="communication" className="py-20">
+      {/* Benefits Metrics */}
+      <section id="benefits" className="py-20">
         <div className="container mx-auto px-4 md:px-0">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Seamless Communication Platform</h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Specifier bridges the gap between Technical Distributors and ABB, enabling faster decision-making and project implementation.
-              </p>
-              
-              <SpecList items={[
-                "Direct messaging with ABB technical teams",
-                "Real-time specification updates and notifications",
-                "Shared annotation and commenting system",
-                "Version history tracking for all communications",
-                "Searchable knowledge base of previous inquiries",
-                "Integrated technical document sharing"
-              ]} className="mb-8" />
-              
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">Measurable Results</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Specifier delivers significant improvements in speed, accuracy, and satisfaction.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <BenefitsMetric 
+              value="65%"
+              label="Reduction in Specification Time"
+              description="From initial request to final approval"
+            />
+            <BenefitsMetric 
+              value="83%"
+              label="Fewer Back-and-Forth Exchanges"
+              description="Compared to traditional email workflows"
+            />
+            <BenefitsMetric 
+              value="94%"
+              label="Technical Distributor Satisfaction"
+              description="Based on platform user feedback"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Communication Platform - Workflow Comparison */}
+      <section id="communication" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-0">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">Traditional vs. Specifier Workflow</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              See how Specifier transforms the motor specification process from start to finish.
+            </p>
+          </div>
+
+          <WorkflowComparison />
+          
+          <div className="mt-16 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold mb-6 text-center">Why Technical Distributors Choose Specifier</h3>
+            
+            <SpecList items={[
+              "Direct access to ABB engineers without email delays",
+              "Instant AI-powered analysis of end client specifications",
+              "Elimination of confusing spreadsheet versions",
+              "Real-time co-creation of solutions with ABB",
+              "Comprehensive record of all communications and changes",
+              "Faster turnaround times for end client delivery"
+            ]} className="mb-8" />
+            
+            <div className="text-center mt-12">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Explore Communication Features
+                Transform Your Specification Process
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <SpecTable 
-                title="Technical Queries"
-                className="col-span-2"
-                rows={[
-                  { title: "Circuit Breaker Rating Question", status: "Answered" },
-                  { title: "Control Panel Integration", status: "Pending" },
-                  { title: "Voltage Range Clarification", status: "Answered" }
-                ]}
-              />
-              <SpecTable 
-                title="Recent Messages"
-                rows={[
-                  { title: "Update on Project 1023", status: "New" },
-                  { title: "Spec Change Request", status: "New" }
-                ]}
-              />
-              <SpecTable 
-                title="Document Sharing"
-                rows={[
-                  { title: "Technical Diagram", status: "Shared" },
-                  { title: "Installation Guide", status: "Updated" }
-                ]}
-              />
-            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Testimonials */}
+      <section id="testimonials" className="py-20">
+        <div className="container mx-auto px-4 md:px-0">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">From Our Users</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Technical distributors and ABB engineers share their experience with Specifier.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <Testimonial 
+              quote="Specifier has cut our motor specification time by more than half. What used to take weeks of emails now happens in days."
+              name="Michael Chen"
+              role="Technical Distributor, ElectroTech Solutions"
+            />
+            <Testimonial 
+              quote="As an ABB engineer, I can now support multiple distributors simultaneously with clear documentation and faster resolution times."
+              name="Sarah Johnson"
+              role="Senior Engineer, ABB Motors Division"
+            />
           </div>
         </div>
       </section>
@@ -168,16 +218,16 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary/10 to-primary/5">
         <div className="container mx-auto px-4 md:px-0 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Specification Process?</h2>
+          <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Motor Specification Process?</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
             Join technical distributors already using Specifier to streamline their workflow with ABB.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Get Started Today
+              Request Technical Distributor Access
             </Button>
             <Button size="lg" variant="outline">
-              Schedule a Demo
+              Schedule a Live Demo
             </Button>
           </div>
         </div>
@@ -190,9 +240,9 @@ const Index = () => {
             <div>
               <h3 className="font-bold text-lg mb-4">Specifier</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-600 hover:text-primary">Features</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-primary">How It Works</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-primary">Pricing</a></li>
+                <li><a href="#features" className="text-gray-600 hover:text-primary">Features</a></li>
+                <li><a href="#how-it-works" className="text-gray-600 hover:text-primary">How It Works</a></li>
+                <li><a href="#benefits" className="text-gray-600 hover:text-primary">Benefits</a></li>
               </ul>
             </div>
             <div>

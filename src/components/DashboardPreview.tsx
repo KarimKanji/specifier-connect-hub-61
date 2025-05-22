@@ -24,7 +24,7 @@ const DashboardPreview = ({ title, description, imageSrc, className = "", delay 
           {description && <p className="text-sm text-gray-600 mt-1 leading-relaxed">{description}</p>}
         </div>
         <CardContent className="p-0">
-          <div className="bg-gray-50/80 p-8 flex items-center justify-center min-h-[220px]">
+          <div className="bg-gray-50/80 p-6 flex items-center justify-center min-h-[180px]">
             {imageSrc ? (
               <img 
                 src={imageSrc} 
@@ -32,7 +32,7 @@ const DashboardPreview = ({ title, description, imageSrc, className = "", delay 
                 className="max-w-full h-auto rounded shadow-sm" 
               />
             ) : (
-              <div className="w-full h-full min-h-[180px] rounded-md bg-gradient-to-r from-gray-200 to-gray-100 animate-pulse"></div>
+              <div className="w-full h-full min-h-[120px] rounded-md bg-gradient-to-r from-gray-200 to-gray-100 animate-pulse"></div>
             )}
           </div>
         </CardContent>
