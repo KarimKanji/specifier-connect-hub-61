@@ -194,7 +194,7 @@ const Index = () => {
       <section id="testimonials" className="py-20">
         <div className="container mx-auto px-4 md:px-0">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">From Our Users</h2>
+            <h2 className="text-3xl font-bold mb-4">From Our Interviews</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Technical distributors and ABB engineers share their experience with Specifier.
             </p>
